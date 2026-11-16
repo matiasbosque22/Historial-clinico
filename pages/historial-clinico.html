@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia clinica</title>
+</head>
+<body>
+    <!--cabecera-->
+    <header>
+        <h1 style="text-align: center;">Hospital seguro y vida</h1>
+        <p style="text-align: center;">Cuidamos de los que amas</p>
+    </header>
+
+    <!--navegacion-->
+    <nav>
+        <a href="/pages/index.html">Inicio</a>
+        <a href="/historial-clinico.html">historia clinica</a>
+    </nav>
+    <hr>
+
+    <h2 style="text-align: center;">Formulario de historia clinica</h2>
+
+    <form action="#">
+
+        <!-- ==========CAMPOS VISTOS EN CLASE ========== -->
+
+        <!-- 1. text -->
+        <label for="nombre">Ingrese su nombre completo</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required>
+        <br><br>
+
+        <!-- 2. text -->
+        <label for="cedula">Ingrese su cedula</label>
+        <input type="text" id="cedula" name="cedula" placeholder="1700000000" maxlength="10" required>
+        <br><br>
+
+        <!-- 3. email -->
+        <label for="email">Ingrese su email</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <!-- 4. password -->
+        <label for="password">Ingrese su password</label>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+
+        <!-- 5. date -->
+        <label for="fecha_nacimiento">Ingrese su fecha de nacimiento</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+        <br><br>
+
+        <!-- 6. tel -->
+        <label for="telefono">Ingrese su telefono</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="+593">
+        <br><br>
+
+        <!-- 7. number -->
+        <label for="cargas">Ingrese sus cargas familiares</label>
+        <input type="number" id="cargas" name="cargas" min="0" max="20">
+        <br><br>
+
+        <!-- 8. radio -->
+        <p>Genero:</p>
+        <label for="masculino"><input type="radio" id="masculino" name="genero" value="masculino">masculino</label>
+        <label for="femenino"><input type="radio" id="femenino" name="genero" value="femenino">femenino</label>
+        <label for="otro"><input type="radio" id="otro" name="genero" value="otro">otro</label>
+        <br><br>
+
+        <!-- 9. select -->
+        <label for="ciudad">Ciudad</label>
+        <select name="ciudad" id="ciudad">
+            <option value="" disabled selected>seleccionar</option>
+            <option value="quito">Quito</option>
+            <option value="latacunga">Latacunga</option>
+            <option value="ibarra">Ibarra</option>
+            <option value="cuenca">Cuenca</option>
+            <option value="otro">Otro</option>
+        </select>
+        <br><br>
+
+        <!-- 10. select -->
+        <label for="sangre">Tipo de sangre</label>
+        <select name="sangre" id="sangre">
+            <option value="" disabled selected>seleccionar</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+        </select>
+        <br><br>
+
+        <!-- 11. textarea -->
+        <label for="motivo">Motivo de consulta / sintomas</label>
+        <br>
+        <textarea name="motivo" id="motivo" rows="4" cols="50" placeholder="Describa sus síntomas"></textarea>
+        <br><br>
+
+        <!-- 12. file -->
+        <label for="foto">Adjuntar foto o examen medico</label>
+        <br>
+        <input type="file" id="foto" name="foto">
+        <br><br>
+
+        <!--range -->
+        <label for="dolor">Nivel de dolor (0 = ninguno, 10 = maximo):</label>
+        <input type="range" id="dolor" name="dolor" min="0" max="10" value="0"
+               oninput="document.getElementById('valorDolor').textContent = this.value">
+        <output id="valorDolor">0</output>
+        <br><br>
+
+        <!--datetime-local -->
+        <label for="cita">Fecha y hora preferida para su cita</label>
+        <input type="datetime-local" id="cita" name="cita">
+        <br><br>
+
+        <!--input + datalist -->
+        <label for="especialidad">Especialidad medica</label>
+        <input list="lista-especialidades" id="especialidad" name="especialidad" placeholder="Escriba o elija">
+        <datalist id="lista-especialidades">
+            <option value="Medicina general">
+            <option value="Pediatria">
+            <option value="Cardiologia">
+            <option value="Traumatologia">
+            <option value="Ginecologia">
+            <option value="Dermatologia">
+        </datalist>
+        <br><br>
+
+        <!--botones-->
+        <input type="submit" value="enviar">
+        <button type="reset">limpiar</button>
+    </form>
+</body>
+</html>
